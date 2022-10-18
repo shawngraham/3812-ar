@@ -60,7 +60,7 @@ The first bit `<a-scene` tells the browser, 'here are the parameters for doing A
 <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 ```
 
-11 - Now commit your changes.
+11 - Now commit your changes. **If** you want your app to track more than one image at a time (ie, display two or more augmentations at once, if two or more trackers are visible), modify with maxtrack: `imageTargetSrc: targets.mind; maxTrack: 2"`
 
 ## make your web app live
 
