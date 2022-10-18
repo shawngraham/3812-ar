@@ -10,7 +10,7 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src="play-on-click.js"></script>
+    <script src="video-handler.js"></script>
   </head>
   <body>
     
@@ -50,11 +50,13 @@
       </a-entity>
      
         <a-entity mindar-image-target="targetIndex: 2" material="shader: flat; src: #testMovie"
-                geometry="primitive: plane; width: 16; height: 9;"
+                geometry="primitive: plane; width: 4; height: 2;"
                 position="0 0 -20"
                 rotation="0 35 0"
-                play-on-click
+                video-handler
                 visible="false">
+          
+
         
         
       </a-entity>  
