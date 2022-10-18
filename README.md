@@ -3,15 +3,21 @@
 
 ## Make target images aka tracking images
 1 - decide what your target images are going to be (ie the things that you are going to augment)
+
 2 - rename them in numerical order, 000_target.png, 001_target.png etc
+
 3 - upload all at once at [https://hiukim.github.io/mind-ar-js-doc/tools/compile](https://hiukim.github.io/mind-ar-js-doc/tools/compile)
+
 4 - examine the results - look for the red circles to indicate that the tool has found many points of interest. more is always better. If it looks pretty sparse, you might have to modify your images (pick new ones, increase contrasts on the existing ones) and try again
+
 5 - double check that your images are in the correct order 
+
 6 - download the targets.mind file
 
 
 ## Get the Basic Repo
 7 - go to this repo and hit the 'fork' button to _clone_ my repository to yours.
+
 8 - replace my trackers with your own: upload the targets.mind file so that it overwrites mine. You should have something like this:
 
 ```
