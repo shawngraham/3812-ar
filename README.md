@@ -79,9 +79,9 @@ But if you get a blue screen with three loading dots that doesn't disappear afte
 
 ## How does the code attach the AR asset to the tracking image?
 
-If you look at the code for the basic experience, you'll see that inside the <a-scene> </ascene> tags we've also defined some assets within the  <a-assets> tag, <a-asset-item> and <a-video>. For each one, we have assigned an id (so we can reference it later). The first is graveModel, and it references a .gltf file of mine that I downloaded from Sketchfab.com. I downloaded the zip file, and placed the whole unzipped folder inside this repo. The `src="` bit points to the .gltf file inside that folder - but for the .gltf file to work, you need everything else that's in that folder.
+If you look at the code for the basic experience, you'll see that inside the <a-scene> </ascene> tags we've also defined some assets within the `<a-assets>` tag, `<a-asset-item>` and `<a-video>`. For each one, we have assigned an id (so we can reference it later). The first is graveModel, and it references a .gltf file of mine that I downloaded from Sketchfab.com. I downloaded the zip file, and placed the whole unzipped folder inside this repo. The `src="` bit points to the .gltf file inside that folder - but for the .gltf file to work, you need everything else that's in that folder.
 
-The next <a-asset-item> points to a location outide this repo with another gltf file. The final <a-video> points to a video that is IN this repo; you can't hotlink to youtube. 
+The next `<a-asset-item>` points to a location outide this repo with another gltf file. The final `<a-video>` points to a video that is IN this repo; you can't hotlink to youtube. 
 
 ```
       <a-assets>
@@ -108,6 +108,8 @@ Having defined our assets, we now tell the webapp which tracking image to go to.
 Here, we use `<a-entity mindar-image-target="targetIndex: 0">`  to say, hey, here's how we want you to display the graveModel on the screen or hey, we want you to attach the video to the third target (targetIndex: 2) and lay it out like this.
 
 Do you see how you could add other assets to your webapp, and how to tie them to the different target images? Look up the documents for mindar or aframe if you want to see how else you can add things.
+
+Or go to [sketchfab.com](https://sketchfab.com) and see if there are any models that you are permitted to download; get the .gltf zip, unzip, and put the folder in your repo. Then do you see how you'd modify the code to define the asset and attach it as an entity to the app?
 
 ## Location Based AR
         
