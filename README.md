@@ -82,12 +82,12 @@ The next <a-asset-item> points to a location outide this repo with another gltf 
       <a-assets>
         <a-asset-item id="graveModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <a-video id="testMovie" src="me.mp4" width="16" height="9" position="0 0 -20"></a-video>
+        <video id="testMovie" autoplay="false" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
       </a-assets>
 
 ```
 
-Having defined our assets, we now tell the webapp which tracking image to go to. Remember that the computer starts counting at 0 rather than 1, which is why I reminded you to name your files `000_image.png,` `001_image.png` etc.
+Having defined our assets, we now tell the webapp which tracking image to go to. Remember that the computer starts counting at 0 rather than 1, which is why I reminded you to name your files `000_image.png,` `001_image.png` etc. 
 
 ```
       <a-entity mindar-image-target="targetIndex: 0">
@@ -96,8 +96,7 @@ Having defined our assets, we now tell the webapp which tracking image to go to.
       <a-entity mindar-image-target="targetIndex: 1">
         <a-gltf-model rotation="0 90 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
       </a-entity>
-      <a-entity mindar-image-target="targetIndex: 2"> 
-        <a-video alpha-video width="1" height="1.32" rotation="0 0 0" position="0 0 0.3" src="#testMovie" material="transparent: true" play="true"></a-video>
+        <a-entity mindar-image-target="targetIndex: 2" material="shader: flat; src: #testMovie" geometry="primitive: plane; width: 4; height: 2;" position="0 0 -20" rotation="0 35 0" video-handler>
       </a-entity>  
   ```
 
