@@ -1,7 +1,11 @@
 # 3812-ar
 
+The code for this webapp is adapted from [here](https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets).
 
 ## Make target images aka tracking images
+
+The three .png images in this repo can work as tracking images. Print them out; alternatively, you can open them in a browser, and then test your webapp by loading it on your phone & pointing at the screen. But first, if you want to use your own traciking images:
+
 1 - decide what your target images are going to be (ie the things that you are going to augment)
 
 2 - rename them in numerical order, 000_target.png, 001_target.png etc
@@ -42,6 +46,7 @@ In the <head> part of the file - the code between <head> and </head> tags, there
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+    <script src="video-handler.js"></script>
   </head>
 
 ```
@@ -54,13 +59,13 @@ The augmented reality consists of us telling the browser where to find the track
 <a-scene mindar-image="imageTargetSrc: https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/band.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 ```
 
-The first bit `<a-scene` tells the browser, 'here are the parameters for doing AR'. The next element, `mindar-image` tells the browser where to find the tracking images. Right now, it is set to find a file called `band.mind` at a different website. But since we just uploaded our file to the same location as this index.html, we can strip out that https://cdn etc to just be our target.mind file. Do that now. **nb** keep the final ;", and do not alter any of the other elements in this line. It'll look like this:
+The first bit `<a-scene` tells the browser, 'here are the parameters for doing AR'. The next element, `mindar-image` tells the browser where to find the tracking images. Right now, in this example, it is set to find a file called `band.mind` at a different website. But since we just uploaded our file to the same location as this index.html, we can strip out that https://cdn etc to just be our target.mind file. Do that now. **nb** keep the final ;", and do not alter any of the other elements in this line. It'll look like this:
 
 ```
 <a-scene mindar-image="imageTargetSrc: targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 ```
 
-11 - Now commit your changes. **If** you want your app to track more than one image at a time (ie, display two or more augmentations at once, if two or more trackers are visible), modify with maxtrack: `imageTargetSrc: targets.mind; maxTrack: 2"`
+11 - Now commit your changes. **If** you want your app to track more than one image at a time (ie, display two or more augmentations at once, if two or more trackers are visible), modify with maxTrack: `imageTargetSrc: targets.mind; maxTrack: 2"`
 
 ## make your web app live
 
@@ -68,9 +73,9 @@ The first bit `<a-scene` tells the browser, 'here are the parameters for doing A
 
 ## test it
 
-13 - It'll take a couple of minutes, but once the repo is published on github.io, load the page on your phone or tablet. If everything is good, you'll be asked to allow the site to access your camera. Say yes. If you can see through the camera, and you get a scanning animation, look at your tracking image so that the image is in the middle of the frame. Your augmentation should appear! 
+13 - It'll take a couple of minutes, but once the repo is published on github.io, load the page on your phone or tablet. If everything is good, you'll be asked to allow the website to access your camera. Say yes. If you can see through the camera, and you get a scanning animation, look at your tracking image so that the image is in the middle of the frame. Your augmentation should appear! 
 
-But if you get a blue screen with three loading dots, and your camera view doesn't appear, there's an error in your code you need to fix.
+But if you get a blue screen with three loading dots that doesn't disappear after a few seconds or so, and your camera view doesn't appear, there's an error in your code you need to fix.
 
 ## How does the code attach the AR asset to the tracking image?
 
@@ -82,7 +87,7 @@ The next <a-asset-item> points to a location outide this repo with another gltf 
       <a-assets>
         <a-asset-item id="graveModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <video id="testMovie" autoplay="false" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
+        <video id="testMovie" autoplay="true" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
       </a-assets>
 
 ```
@@ -102,9 +107,10 @@ Having defined our assets, we now tell the webapp which tracking image to go to.
 
 Here, we use `<a-entity mindar-image-target="targetIndex: 0">`  to say, hey, here's how we want you to display the graveModel on the screen or hey, we want you to attach the video to the third target (targetIndex: 2) and lay it out like this.
 
-Do you see how you could add other assets to your webapp, and how to tie them to the different target images?
+Do you see how you could add other assets to your webapp, and how to tie them to the different target images? Look up the documents for mindar or aframe if you want to see how else you can add things.
 
-        
 ## Location Based AR
         
-See this [from my digital archaeology course](https://digiarch.netlify.app/week/11/augmented-reality/) to get a handle on making your AR appear based on location.
+See this [from my digital archaeology course](https://digiarch.netlify.app/week/11/augmented-reality/) to get a handle on making your AR appear based on location, using the same framework we've used above.
+
+It is also possible to write geotriggers in Twine such that a passage appears only if you're standing in the right spot. See [The Twine Cookbook](https://twinery.org/cookbook/geolocation/sugarcube/sugarcube_geolocation.html). Download the example; import it into Twine. See also [this older tutorial](https://github.com/shawngraham/ar-archaeology/blob/master/workshop%20materials/Hacking%20Twine%20to%20make%20a%20location-based%20game.md) about how to set your different passages by geolocation. It's been a while since I did that, so I'll have to re-work it out, but if anyone's game for that, then I'm happy to do it.
