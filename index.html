@@ -25,10 +25,19 @@
       <a-assets>
         <a-asset-item id="bearModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <a-video id="testMovie" autoplay loop="true" src="me.mp4" crossOrigin="anonymous" muted</a-video>
+        <a-video id="testMovie" preload="auto" src="me.mp4" width="16" height="9" autoplay loop="true" crossOrigin="anonymous" muted</a-video>
       </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      
+      <a-camera position="0 0 0" look-controls="enabled: false">
+      <a-entity
+          position="0 0 -1.5"
+          text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Scan for Ghosts">
+        </a-entity>
+      </a-camera>
 
       <!-- the first of your targets is 0, the second is 1, the third is 2 -->
       <!-- the next lines specify what to load and where to position it when an image is detected -->
