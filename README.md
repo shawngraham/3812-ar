@@ -1,9 +1,8 @@
 # 3812-ar
 
-Look up the work of Stu Eve, if you want to see really thoughtful explorations of AR for archaeology. His [early video about 'augmenting a Roman fort'](https://vimeo.com/30861262) still blows my mind:
+Look up the work of Stu Eve, if you want to see really thoughtful explorations of AR for archaeology. His [early video about 'augmenting a Roman fort'](https://vimeo.com/30861262) ([blog post](https://www.dead-mens-eyes.org/augmenting-a-roman-fort/)) still blows my mind:
 
-<iframe src="https://player.vimeo.com/video/30861262?h=4ee3e42262" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/30861262">Augmenting a Roman Fort</a> from <a href="https://vimeo.com/dataanarchist">Dead Men&#039;s Eyes</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+https://vimeo.com/30861262
 
 The code for this webapp is adapted from [here](https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets).
 
