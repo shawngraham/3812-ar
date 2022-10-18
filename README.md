@@ -4,7 +4,7 @@ Look up the work of Stu Eve, if you want to see really thoughtful explorations o
 
 https://vimeo.com/30861262
 
-The code for this webapp is adapted from [here](https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets).
+The code for the webapp we'll build below is adapted from [here](https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets).
 
 ## Make target images aka tracking images
 
