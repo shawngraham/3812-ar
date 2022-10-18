@@ -104,3 +104,8 @@ Having defined our assets, we now tell the webapp which tracking image to go to.
 Here, we use `<a-entity mindar-image-target="targetIndex: 0">`  to say, hey, here's how we want you to display the graveModel on the screen or hey, we want you to attach the video to the third target (targetIndex: 2) and lay it out like this.
 
 Do you see how you could add other assets to your webapp, and how to tie them to the different target images?
+
+        
+## Location Based AR
+        
+See this [from my digital archaeology course](https://digiarch.netlify.app/week/11/augmented-reality/) to get a handle on making your AR appear based on location.
