@@ -1,0 +1,11 @@
+Model Information:
+* title:	Gravestone2
+* source:	https://sketchfab.com/3d-models/gravestone2-c287761136a8421ca9856edf8efd595e
+* author:	electricarchaeo (https://sketchfab.com/electricarchaeo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Gravestone2" (https://sketchfab.com/3d-models/gravestone2-c287761136a8421ca9856edf8efd595e) by electricarchaeo (https://sketchfab.com/electricarchaeo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
