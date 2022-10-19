@@ -10,8 +10,9 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
-    <script src="video-handler.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component/dist/aframe-animation-component.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
   </head>
   <body>
     
@@ -50,9 +51,10 @@
       </a-entity>
       <a-entity mindar-image-target="targetIndex: 1">
         <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
-      </a-entity>
-     
-        <a-entity mindar-image-target="targetIndex: 2" src: #testMovie" video-controls="src:#testMovie" video-handler </a-entity>
+      </a-entity>      
+        
+        <a-video mindar-image-target="targetIndex: 2" id="video-screen" src="#testMovie" position="0 4.5 -14" width="16" height="9"></a-video>                                                                                             
+                                                                                                       
     </a-scene>
   </body>
 </html>
