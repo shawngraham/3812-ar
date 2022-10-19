@@ -28,7 +28,7 @@
       <a-assets>
         <a-asset-item id="bearModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <video id="testMovie" autoplay="true" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
+        <video id="testMovie" preload="auto" src="me.mp4">
       </a-assets>
       
       <a-camera position="0 0 0" look-controls="enabled: false">
@@ -41,8 +41,6 @@
                 value: Scan for Ghosts">
         </a-entity>
       </a-camera>
-
-      <a-videosphere src="#testMovie" rotation="0 180 0"></a-videosphere>
       
       <!-- the first of your targets is 0, the second is 1, the third is 2 -->
       <!-- the next lines specify what to load and where to position it when an image is detected -->
@@ -54,7 +52,9 @@
         <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
       </a-entity>
      
-        <a-entity mindar-image-target="targetIndex: 2" video-controls="src:#testMovie"></a-entity>
+        <a-entity mindar-image-target="targetIndex: 2" material="shader: flat; video-controls="src:#testMovie" geometry="primitive: plane; width: 1; height: 1;"
+                position="0 0 -20"
+                rotation="0 35 0"></a-entity>
     </a-scene>
   </body>
 </html>
