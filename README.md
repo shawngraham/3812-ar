@@ -8,7 +8,7 @@ The code for the webapp we'll build below is adapted from [here](https://hiukim.
 
 ## Make target images aka tracking images
 
-The three .png images in this repo can work as tracking images. Print them out; alternatively, you can open them in a browser, and then test your webapp by loading it on your phone & pointing at the screen. But first, if you want to use your own traciking images:
+The three .png images in this repo can work as tracking images. Right-click and save as image if you want to use them. Then, when the webapp is complete, print them out, load up your app on your phone and test! Alternatively, if you don't have a printer, you can open them in a browser, and then test your webapp by loading it on your phone & pointing at the screen. But let's not get ahead of ourselves. To make your own tracking images:
 
 1 - decide what your target images are going to be (ie the things that you are going to augment)
 
@@ -79,11 +79,11 @@ The first bit `<a-scene` tells the browser, 'here are the parameters for doing A
 
 13 - It'll take a couple of minutes, but once the repo is published on github.io, load the page on your phone or tablet. If everything is good, you'll be asked to allow the website to access your camera. Say yes. If you can see through the camera, and you get a scanning animation, look at your tracking image so that the image is in the middle of the frame. Your augmentation should appear! 
 
-But if you get a blue screen with three loading dots that doesn't disappear after a few seconds or so, and your camera view doesn't appear, there's an error in your code you need to fix.
+But if you get a blue screen with three loading dots that doesn't disappear after a few seconds or so, and your camera view doesn't appear, there's an error in your code you need to fix. Quotation marks and semi-colons etc are where typos often can creep in; check your code.
 
 ## How does the code attach the AR asset to the tracking image?
 
-If you look at the code for the basic experience, you'll see that inside the <a-scene> </ascene> tags we've also defined some assets within the `<a-assets>` tag, `<a-asset-item>` and `<a-video>`. For each one, we have assigned an id (so we can reference it later). The first is graveModel, and it references a .gltf file of mine that I downloaded from Sketchfab.com. I downloaded the zip file, and placed the whole unzipped folder inside this repo. The `src="` bit points to the .gltf file inside that folder - but for the .gltf file to work, you need everything else that's in that folder.
+If you look at the code for the basic experience, you'll see that inside the <a-scene> </ascene> tags we've also defined some assets within the `<a-assets>` tag, `<a-asset-item>` and `<a-video>`. For each one, we have assigned an id (so we can reference it later). The first is graveModel, and it references a .gltf file of mine that I downloaded from Sketchfab.com. I downloaded the zip file, and placed the whole unzipped folder inside this repo. The `src="` bit points to the .gltf file inside that folder - but for the .gltf file to work, you need everything else that's in that folder too.
 
 The next `<a-asset-item>` points to a location outide this repo with another gltf file. The final `<a-video>` points to a video that is IN this repo; you can't hotlink to youtube. 
 
