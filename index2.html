@@ -29,7 +29,7 @@
       <a-assets>
         <a-asset-item id="bearModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <video id="testMovie" preload="auto" autoplay loop="true" src="me.mp4">
+        <video id="testMovie" src="me.mp4">
       </a-assets>
       
       <a-camera position="0 0 0" look-controls="enabled: false">
@@ -53,7 +53,7 @@
         <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
       </a-entity>      
         
-        <a-video mindar-image-target="targetIndex: 2" id="video-screen" src="#testMovie"  material="shader: flat; position="0 4.5 -14" geometry="primitive: plane; width: 1; height: 1;"></a-video>                                                                                             
+        <a-video mindar-image-target="targetIndex: 2" src="#testMovie"></a-video>                                                                                             
                                                                                                        
     </a-scene>
   </body>
