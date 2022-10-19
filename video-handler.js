@@ -4,7 +4,7 @@ AFRAME.registerComponent('video-handler',{
   init: function(){
    let el = this.el;
    let video = document.querySelector("#testMovie");
-   vid.pause();
+   video.pause();
    el.addEventListener('mouseenter',function(){
       video.play();
    });
