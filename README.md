@@ -4,6 +4,14 @@ Look up the work of Stu Eve, if you want to see really thoughtful explorations o
 
 https://vimeo.com/30861262
 
+## What are we building?
+
+Print out, or open in another browser window, 000_diary1.png and 001_diary2.png.
+
+On your phone, open https://shawngraham.github.io/3812-ar.
+
+When it asks for permission to use your camera, say 'yes'. Then when the scanner animation starts, point your camera at either of the two images. You'll see two 'ghosts' that are now haunting these diary pages. Cool, eh?
+
 The code for the webapp we'll build below is adapted from [here](https://hiukim.github.io/mind-ar-js-doc/examples/multi-targets).
 
 ## Make target images aka tracking images
@@ -111,7 +119,7 @@ Having defined our assets, we now tell the webapp which tracking image to go to.
 
 Here, we use `<a-entity mindar-image-target="targetIndex: 0">`  to say, hey, here's how we want you to display the graveModel on the screen or hey, we want you to attach the video to the third target (targetIndex: 2) and lay it out like this.
 
-Do you see how you could add other assets to your webapp, and how to tie them to the different target images? Look up the documents for mindar or aframe if you want to see how else you can add things.
+**The third image is not tied to any asset in index.html** So if you point the camera at the third image, nothing will happen. For a challenge, see if you can figure out how to get a third _thing_ of some sort loaded up. [Check out this documentation](https://hiukim.github.io/mind-ar-js-doc/). Do you see how you could add other assets to your webapp, and how to tie them to the different target images? Look up the documents for mindar or aframe if you want to see how else you can add things.
 
 Or go to [sketchfab.com](https://sketchfab.com) and see if there are any models that you are permitted to download; get the .gltf zip, unzip, and put the folder in your repo. Then do you see how you'd modify the code to define the asset and attach it as an entity to the app?
 
@@ -119,4 +127,8 @@ Or go to [sketchfab.com](https://sketchfab.com) and see if there are any models 
         
 See this [from my digital archaeology course](https://digiarch.netlify.app/week/11/augmented-reality/) to get a handle on making your AR appear based on location, using the same framework we've used above.
 
-It is also possible to write geotriggers in Twine such that a passage appears only if you're standing in the right spot. See [The Twine Cookbook](https://twinery.org/cookbook/geolocation/sugarcube/sugarcube_geolocation.html). Download the example; import it into Twine. See also [this older tutorial](https://github.com/shawngraham/ar-archaeology/blob/master/workshop%20materials/Hacking%20Twine%20to%20make%20a%20location-based%20game.md) about how to set your different passages by geolocation. If you go to [my demo scratchpad repo](https://github.com/shawngraham/demo/blob/master/twine-ar/msudai.html) you will see the code for 'msudai.html'. Click on 'raw', and copy all of that code to a text editor like sublime text or notepad++. Then, save as 'twine-ar.html' or similar. Open up the twine editor, and import that html. You can now modify the locations and passages as per my older tutorial. The key thing is the init passage that sets up the coordinates for your passages, and the calibrate scan passage that looks to see if anything matches, and displays the relevant text. (I should mention that I tested this on firefox on android and it works.)
+It is also possible to write geotriggers in Twine such that a passage appears only if you're standing in the right spot. See [The Twine Cookbook](https://twinery.org/cookbook/geolocation/sugarcube/sugarcube_geolocation.html). Download the example; import it into Twine. See also [this older tutorial](https://github.com/shawngraham/ar-archaeology/blob/master/workshop%20materials/Hacking%20Twine%20to%20make%20a%20location-based%20game.md) about how to set your different passages by geolocation. If you go to [my demo scratchpad repo](https://github.com/shawngraham/demo/blob/master/twine-ar/cu-arg.html) you will see the code for 'cu-arg.html'. Click on 'raw', and copy all of that code to a text editor like sublime text or notepad++. Then, save as 'twine-ar.html' or similar. 
+
+Try it out - go to the quad, and then [load it up in your browser](https://shawngraham.github.io/demo/twine-ar/cu-arg) (eg, on your phone!) https://shawngraham.github.io/demo/twine-ar/cu-arg.
+
+pen up the twine editor, and import that html. You can now modify the locations and passages as per my older tutorial. The key thing is the init passage that sets up the coordinates for your passages, and the calibrate scan passage that looks to see if anything matches, and displays the relevant text. (I should mention that I tested this on firefox on android and it works.)
