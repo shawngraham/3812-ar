@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="video-handler.js"></script>
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
   </head>
   <body>
     
@@ -27,7 +28,7 @@
       <a-assets>
         <a-asset-item id="bearModel" src="gravestone2/scene.gltf"></a-asset-item>
         <a-asset-item id="raccoonModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/examples/image-tracking/assets/band-example/raccoon/scene.gltf"></a-asset-item>
-        <video id="testMovie" autoplay="true" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
+        <video id="testMovie" autoplay="false" preload="auto" src="me.mp4" loop="true" crossOrigin="anonymous" webkit-playsinline playsinline</video>
       </a-assets>
       
       <a-camera position="0 0 0" look-controls="enabled: false">
@@ -41,6 +42,8 @@
         </a-entity>
       </a-camera>
 
+      <a-videosphere src="#testMovie" rotation="0 180 0"></a-videosphere>
+      
       <!-- the first of your targets is 0, the second is 1, the third is 2 -->
       <!-- the next lines specify what to load and where to position it when an image is detected -->
       
@@ -51,12 +54,7 @@
         <a-gltf-model rotation="90 0 0 " position="0 -0.25 0" scale="0.05 0.05 0.05" src="#bearModel" animation-mixer>
       </a-entity>
      
-        <a-entity mindar-image-target="targetIndex: 2" material="shader: flat; src: #testMovie"
-                geometry="primitive: plane; width: 1; height: 1;"
-                position="0 0 -20"
-                rotation="0 35 0"
-                video-handler>
-     </a-entity>  
+        <a-entity mindar-image-target="targetIndex: 2" video-controls="src:#testMovie"></a-entity>
     </a-scene>
   </body>
 </html>
